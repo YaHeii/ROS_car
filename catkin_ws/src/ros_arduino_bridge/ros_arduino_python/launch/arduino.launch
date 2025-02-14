@@ -1,0 +1,9 @@
+<launch>
+   <node name="arduino" pkg="ros_arduino_python" type="arduino_node.py" output="screen">
+      <rosparam file="$(find ros_arduino_python)/config/my_arduino_params.yaml" command="load" />
+   </node>
+ 
+   <node pkg="tf" type="static_transform_publisher" name="transform_from_Odom_to_base_link" args="0.204 0.0 0.0 0.0 0.0 0.0 odom base_link 100" />
+
+</launch>
+ 
